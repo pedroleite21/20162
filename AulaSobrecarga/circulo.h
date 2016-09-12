@@ -4,11 +4,13 @@
 #include <string>
 #include <sstream>
 #include <iostream>
+#include <math.h>
 using namespace std;
 
 class Circulo {
 	private:
 		float raio, x, y;
+
 		float area_circulo();
 		float distancia_centros(Circulo outro);		
 		float circunferencia();
@@ -28,6 +30,8 @@ class Circulo {
 		void imprimir_distancia(Circulo outro);
 		
 		string toString();
+	
+		bool operator^(Circulo &c);
 };
 
 #endif

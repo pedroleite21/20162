@@ -3,38 +3,42 @@
 #include <stdlib.h>
 using namespace std;
 
+ostream& operator<< (ostream &out, Circulo &c) {
+	float x1, y1;
+	c.getCentro(x1, y1);
+	out << "x = " << x1 << ", y = " << y1 << ", raio = " << c.getRaio();
+	return out;
+}
+
+istream& operator>> (istream &in, Circulo &c){
+	int x, y, r;
+	in >> x >> y >> r;
+	c.definir_centro(x, y);
+	c.setRaio(r);
+	return in;
+}
+
 int main(void) {
-	Circulo c1, c2;
+	Circulo myC, myC2;
+	string values;
+		
+	cout << myC << endl;
+	values=myC.toString();
+	cout << values << endl;
 	
-	cout << "Círculo 1:" << endl;
-	c1.imprimir_raio();
-	c1.imprimir_centro();
-	c1.setRaio(9.0);
-	c1.definir_centro(4.6, 5.9);
-	c1.imprimir_raio();
-	c1.imprimir_centro();
-
-	c1.aumentar_raio(15);
-	c1.imprimir_raio();
-
-	c1.imprimir_area();
+	cout << "Informe os valores de x, y e r para o círculo 1:" << endl;
+	cin >> myC;
+	cout << myC;
+	cout << endl;
+	myC.imprimir_area();
 	
-	cout << "Círculo 2:" << endl;
-	c2.imprimir_raio();
-	c2.imprimir_centro();
-	c2.setRaio(9.0);
-	c2.definir_centro(7, 5);
-	c2.imprimir_raio();
-	c2.imprimir_centro();
+	cout << endl;
 
-	c2.aumentar_raio(0);
-	c2.imprimir_raio();
-
-	c2.imprimir_area();
-
-	cout << "Distância entre c1 e c2: " << endl;
-
-	c1.imprimir_distancia(c2);
+	cout << "Informe os valores de x, y e r para o círculo 2:" << endl;
+	cin >> myC2;
+	cout << myC2;
+	cout << endl;
+	myC2.imprimir_area();
 
 	return 0;
  	

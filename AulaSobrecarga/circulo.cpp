@@ -1,5 +1,4 @@
 #include "circulo.h"
-#include <math.h>
 
 float Circulo::area_circulo() {
 	float area1;
@@ -97,7 +96,4 @@ string Circulo::toString() {
 	return tmpstr;
 }
 
-Circulo Circulo::operator<< (Circulo &c) {
-	
-}
 
